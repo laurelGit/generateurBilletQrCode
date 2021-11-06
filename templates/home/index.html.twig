@@ -1,0 +1,33 @@
+{% extends('base.html.twig') %}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/assets1/css/main.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <ul>
+            <li><a href="#" class="icon brands fa-twitter" style="width: 50px; height: 50px"><span class="label">Twitter</span></a></li>
+        </ul>
+        <div id="bg"></div>
+        <div id="overlay"></div>
+        <div id="main">
+
+            <!-- Header -->
+            <header id="header">
+                <h1>Bienvenu sur ACERFI DANCE</h1>
+                <p>Grande competition de dance organisée à l'occasion de l'anniversaire de la prestigieuse academie de dance d'ACERFI</p>
+                <nav>
+
+                    <div class="container-contact2-form-btn">
+                        <div class="wrap-contact2-form-btn">
+                            <div class="contact2-form-bgbtn"></div>
+                            <a href="{{ path('client.creerClient') }}"><button class="contact2-form-btn">Enregistrement</button></a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+{% endblock %}

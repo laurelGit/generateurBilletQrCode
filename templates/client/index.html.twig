@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClientController!{% endblock %}
+
+{% block body %}
+	{# read and display just one flash message type #}
+	{#% for message in app.flashes('success') %}
+		<div class="alert alert-success">
+			{{ message }}
+		</div>
+	{% endfor %#}
+	<h2>List of all Client and QRCode</h2>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<td>ID</td>
+				<td>Nom</td>
+				<td>QRCode</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for client in clients %}
+				<tr>
+					<td>{{ client.id }}</td>
+					<td>
+                        {{ client.nom }}
+					</td>
+					<td>
+                        <img width="250" height="250" src="{{asset('assets/qr-code/')}}{{ client.qrcode }}" alt="qr-code">
+					</td>
+					<td>
+                        <a href="{{ path('client.decode', {qrcode: client.qrcode}) }}"><button type="button" class="btn btn-outline-success">Decoder</button></a>
+					</td>
+					<td>
+                        <a href="{{ path('client.gen_billet', {qrcode: client.qrcode}) }}"><button type="button" class="btn btn-outline-dark">Generer Billet</button></a>
+					</td>
+				</tr>
+			{% endfor %}
+
+		</tbody>
+	</table>
+{% endblock %}

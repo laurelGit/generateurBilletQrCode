@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <img width="350" height="500" src="{{asset('assets/img_billet/')}}{{ imgName }}" alt="qr-code">
+    <a href="{{ path('client.download_img', {imgName: imgName}) }}"><button type="button" class="btn btn-outline-dark">Telecharger Billet</button></a>
+    <!--<a href="{{ path('client.download_file', {imgName: imgName}) }}"><button type="button" class="btn btn-outline-dark">Telecharger Billet</button></a> -->
+{% endblock %}

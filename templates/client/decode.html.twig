@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <img width="250" height="250" src="{{asset('assets/qr-code/')}}{{ client.qrcode }}" alt="qr-code">
+    <h4>Nom : {{nom}}</h4>
+    <h4>Contact : {{contact}}</h4>
+    <h4>Email : {{email}}</h4>
+{% endblock %}

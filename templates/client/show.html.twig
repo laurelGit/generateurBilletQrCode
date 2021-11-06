@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/util.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+
+	<div class="bg-contact2">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+				<span class="contact2-form-title">
+					Acheter un billet
+				</span>
+				{{ form_start(form) }}
+				<div class="wrap-input2 validate-input" data-validate="Name is required">
+					<div class="form-group row">
+
+						{{ form_row(form.nom) }}
+
+					</div>
+				</div>
+				<div class="wrap-input2 validate-input" data-validate="Name is required">
+
+					{{ form_row(form.prenom) }}
+
+				</div>
+				<div class="wrap-input2 validate-input" data-validate="Name is required">
+
+					{{ form_row(form.email) }}
+
+				</div>
+
+				<div class="wrap-input2 validate-input" data-validate="Name is required">
+
+					{{ form_row(form.contact) }}
+
+				</div>
+				<div class="wrap-input2 validate-input" data-validate="Name is required">
+
+					{{ form_row(form.categorie) }}
+
+				</div>
+				<div class="container-contact2-form-btn">
+					<div class="wrap-contact2-form-btn">
+						<div class="contact2-form-bgbtn"></div>
+						<button class="contact2-form-btn">
+							Enregistrer
+						</button>
+					</div>
+				</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

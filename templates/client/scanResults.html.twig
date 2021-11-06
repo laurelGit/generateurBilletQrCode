@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h4>{{ client.nom }}</h4>
+    <h4>{{ client.prenom }}</h4>
+    <h4>{{ client.email }}</h4>
+    <h4>{{ client.contact }}</h4>
+    {% if status == "Non Payer" %}
+        <div class="form-check form-switch">
+            {{ form(form) }}
+        </div>
+    {% else %}
+        <h1>{{ status }}</h1>
+    {% endif %}
+    {% if verifier == "Non Verifier" %}
+        <div class="form-check form-switch">
+            {{ form(formv) }}
+        </div>
+    {% else %}
+        <h1>{{ verifier }}</h1>
+    {% endif %}
+{% endblock %}
